@@ -1,5 +1,7 @@
 package br.com.mvcs.teste;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 import br.com.mvcs.model.Cliente;
@@ -13,14 +15,21 @@ public class Tester {
 	
         Cliente cliente = new Cliente();
  
-        cliente.setRazaoSocial("Eireli etc abc");
-        cliente.setRazaoSocial("Venda do Ze");
+//        cliente.setRazaoSocial("Eireli etc 222");
+//        cliente.setRazaoSocial("Venda do João");
         cliente.setCpfCnpj("364.350.128-57");
-        cliente.setContato("(11) 971312661");
-        cliente.setStatus("Ativo");
-  
-        ClienteDAO.createCliente(cliente);
-     
+//        cliente.setContato("(11) 971312661");
+//        cliente.setStatus("Ativo");
+//  
+//        ClienteDAO.createCliente(cliente);
+        
+        List<Cliente> lista=  ClienteDAO.readCliente(cliente);
+//        
+//        
+        for(Cliente cli :lista) {
+        	System.out.println(cli.getId());
+        	System.out.println(cli.getRazaoSocial());
+        }
  
 	}
 

@@ -31,16 +31,20 @@ public class ClienteDAO {
 		try {
 			Query<Cliente> query = null;
 			if (cliente.getId() > 0) {
-				query = session.createQuery("from cliente  where id = :id ");
+				query = session.createQuery("from Cliente  where id = :id ");
 				query.setParameter("id",cliente.getId());
 				
 			}else if(cliente.getRazaoSocial() != null && !cliente.getRazaoSocial().isEmpty()) {
-				query = session.createQuery("from cliente  where razao_social = :rz ");
+				query = session.createQuery("from Cliente  where razao_social = :rz ");
 				query.setParameter("rz",cliente.getRazaoSocial());
 				
 			}else if(cliente.getCpfCnpj() != null && !cliente.getCpfCnpj().isEmpty()) {				
-				query = session.createQuery("from cliente  where cnpj_cpf = :cnp ");
+				query = session.createQuery("from Cliente  where cnpj_cpf = :cnp ");
 				query.setParameter("cnp",cliente.getCpfCnpj());
+			
+			}else if(cliente.getStatus() != null && !cliente.getStatus().isEmpty()) {				
+				query = session.createQuery("from Cliente  where status = :st ");
+				query.setParameter("st",cliente.getStatus());
 			}
 			
 			if(query != null) {

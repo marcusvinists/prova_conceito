@@ -8,12 +8,83 @@
 <h:head>
 </h:head>
 <h:body>
-	<h:form>
+
+	<p:outputPanel style="clear:both; display:block; width:100%; text-align:center; margin-bottom: 2em;">
+		<h:outputText style="color:gray; font-size:1.5em;" value="Bem-vindo ao incrível cadastro online para clientes"></h:outputText>
+	</p:outputPanel>
+	
+	<h:form prependId="false">
+		<p:messages id="messages" showDetail="true" closable="true" autoUpdate="true" />
+
 		<p:panelGrid layout="grid" columns="1">
-		
-		
+			<f:facet name="header">
+				<h:outputText value="Cadastro" />
+			</f:facet>
+
+			<p:inputText placeholder="Razão Social" value="#{clienteManager.cliente.razaoSocial}" required="true" requiredMessage="Campo Razão Social é obrigatório"/>
+			<p:inputText placeholder="Nome Fantasia" value="#{clienteManager.cliente.nomeFantasia}"/>
+			<p:inputText placeholder="CNPJ/CPF" value="#{clienteManager.cliente.cpfCnpj}" required="true" requiredMessage="Campo CNPJ/CPF é obrigatório"/>
+			<p:inputText placeholder="Telefones de contato" value="#{clienteManager.cliente.contato}"/>
+			<p:outputLabel value="Status" for="status:"/>
+			<p:outputPanel>
+				
+				<p:selectOneMenu id="status" value="#{clienteManager.cliente.status}" style="width:125px">
+					<f:selectItem itemLabel="Ativo" itemValue="Ativo" />
+					<f:selectItem itemLabel="Inativo" itemValue="Inativo" />
+				</p:selectOneMenu>
+			</p:outputPanel>
+			
+			<p:commandButton value="Cadastrar" action="#{clienteManager.inserirCliente()}" />
 		</p:panelGrid>
 	</h:form>
+	
+	<h:form prependId="false">
+		<p:panelGrid layout="grid" columns="1">
+			<f:facet name="header">
+				<h:outputText value="Pesquisar" />
+			</f:facet>
+
+			<p:selectOneMenu id="pesquisar_por" value="#{clienteManager.pesquisarPor}"
+				style="width:125px">
+				<f:selectItem itemLabel="Código" itemValue="codigo" />
+				<f:selectItem itemLabel="CNPJ/CPF" itemValue="cnpj" />
+				<f:selectItem itemLabel="Status" itemValue="status" />
+			</p:selectOneMenu>
+			
+			<p:inputText placeholder="Valor a pesquisar" value="#{clienteManager.valorPesquisar}"/>
+			<p:commandButton value="Pesquisar" actionListener="#{clienteManager.pesquisarCliente()}" update="tb_cliente" />
+		</p:panelGrid>
+		<p:panelGrid layout="grid" columns="1">
+						
+			<p:dataTable id="tb_cliente" var="cliente" value="#{clienteManager.resultsPesquisa}" emptyMessage="Sem registros">
+			    
+			    <p:column headerText="Código">
+			        <h:outputText value="#{cliente.id}" />
+			    </p:column>
+			 
+			    <p:column headerText="Razão Social">
+			        <h:outputText value="#{cliente.razaoSocial}" />
+			    </p:column>
+			 
+			    <p:column headerText="Nome Fantasia">
+			        <h:outputText value="#{cliente.nomeFantasia}" />
+			    </p:column>
+			 
+			    <p:column headerText="CNPJ/CPF">
+			        <h:outputText value="#{cliente.cpfCnpj}" />
+			    </p:column>
+			    
+			     <p:column headerText="Telefones de contato">
+			        <h:outputText value="#{cliente.contato}" />
+			    </p:column>
+			    
+			     <p:column headerText="Status">
+			        <h:outputText value="#{cliente.status}" />
+			    </p:column>
+			</p:dataTable>
+		</p:panelGrid>
+	</h:form>
+	
 </h:body>
 
 </html>
