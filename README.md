@@ -4,6 +4,17 @@ Prova conceito java
 Olá,
 Meu nome é Marcus.
 
+Tecnologias utilizadas
+
+Maven;
+Java 8;
+MySQL;
+Tomcat 9;
+JSF;
+PRIMEFACES;
+HIBERNATE.
+
+
 Segue abaixo o script do banco para facilitar teste.
 
 CREATE SCHEMA `conceito` ;
