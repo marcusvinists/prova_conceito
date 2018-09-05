@@ -2,9 +2,9 @@
 Prova conceito java
 
 Olá,
-Meu nome é Marcus.
+Meu nome é Marcus Vinpicius da Cunha Santos..
 
-As tecnologias utilizadas foram:
+As tecnologias utilizadas no projeto foram:
 
 * Maven;
 * Java 8;
@@ -21,7 +21,7 @@ CREATE SCHEMA `conceito` ;
 
 USE conceito;
 
-
+<pre>
 CREATE TABLE cliente (
     id int NOT NULL AUTO_INCREMENT,
     razao_social varchar(200) NOT NULL,
@@ -31,3 +31,5 @@ CREATE TABLE cliente (
     status_cliente varchar(20) NOT NULL,
     PRIMARY KEY (id)
 );
+
+</pre>
