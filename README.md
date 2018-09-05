@@ -4,15 +4,15 @@ Prova conceito java
 Olá,
 Meu nome é Marcus.
 
-Tecnologias utilizadas
+As tecnologias utilizadas foram:
 
-Maven;
-Java 8;
-MySQL;
-Tomcat 9;
-JSF;
-PRIMEFACES;
-HIBERNATE.
+* Maven;
+* Java 8;
+* MySQL;
+* Tomcat 9;
+* JSF;
+* PRIMEFACES;
+* HIBERNATE.
 
 
 Segue abaixo o script do banco para facilitar teste.
