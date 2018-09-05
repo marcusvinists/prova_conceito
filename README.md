@@ -17,11 +17,12 @@ As tecnologias utilizadas no projeto foram:
 
 Segue abaixo o script do banco para facilitar teste.
 
+<pre>
 CREATE SCHEMA `conceito` ;
 
 USE conceito;
 
-<pre>
+
 CREATE TABLE cliente (
     id int NOT NULL AUTO_INCREMENT,
     razao_social varchar(200) NOT NULL,
