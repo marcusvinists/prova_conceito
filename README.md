@@ -2,7 +2,7 @@
 Prova conceito java
 
 Olá,
-Meu nome é Marcus Vinpicius da Cunha Santos..
+Meu nome é Marcus Vinpicius da Cunha Santos.
 
 As tecnologias utilizadas no projeto foram:
 
